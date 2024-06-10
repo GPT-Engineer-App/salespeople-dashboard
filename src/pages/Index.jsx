@@ -1,4 +1,5 @@
 import { Box, Container, Flex, Grid, GridItem, Heading, Text, VStack, useColorMode, IconButton } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 const Index = () => {
@@ -16,29 +17,18 @@ const Index = () => {
       </Flex>
       <Grid templateColumns="repeat(12, 1fr)" gap={4}>
         <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
-          <Box bg="gray.700" p={4} borderRadius="md">
-            <Text fontSize="xl" color="white">Sales Performance</Text>
-          </Box>
+          <Link to="/sales-performance">
+            <Box bg="gray.700" p={4} borderRadius="md">
+              <Text fontSize="xl" color="white">Sales Performance</Text>
+            </Box>
+          </Link>
         </GridItem>
         <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
-          <Box bg="gray.700" p={4} borderRadius="md">
-            <Text fontSize="xl" color="white">Sales Throughout Time</Text>
-          </Box>
-        </GridItem>
-        <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
-          <Box bg="gray.700" p={4} borderRadius="md">
-            <Text fontSize="xl" color="white">Total Salesforce</Text>
-          </Box>
-        </GridItem>
-        <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
-          <Box bg="gray.700" p={4} borderRadius="md">
-            <Text fontSize="xl" color="white">Active Salesforce</Text>
-          </Box>
-        </GridItem>
-        <GridItem colSpan={{ base: 12 }}>
-          <Box bg="gray.700" p={4} borderRadius="md">
-            <Text fontSize="xl" color="white">Agent Tree</Text>
-          </Box>
+          <Link to="/agent-tree">
+            <Box bg="gray.700" p={4} borderRadius="md">
+              <Text fontSize="xl" color="white">Agent Tree</Text>
+            </Box>
+          </Link>
         </GridItem>
       </Grid>
     </Container>
