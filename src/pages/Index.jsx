@@ -1,18 +1,46 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, Flex, Grid, GridItem, Heading, Text, VStack, useColorMode, IconButton } from "@chakra-ui/react";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const Index = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
+    <Container maxW="container.xl" p={4}>
+      <Flex justifyContent="space-between" alignItems="center" mb={4}>
+        <Heading as="h1" size="lg">Car Dealer Dashboard</Heading>
+        <IconButton
+          aria-label="Toggle dark mode"
+          icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
+          onClick={toggleColorMode}
+        />
+      </Flex>
+      <Grid templateColumns="repeat(12, 1fr)" gap={4}>
+        <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
+          <Box bg="gray.700" p={4} borderRadius="md">
+            <Text fontSize="xl" color="white">Sales Performance</Text>
+          </Box>
+        </GridItem>
+        <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
+          <Box bg="gray.700" p={4} borderRadius="md">
+            <Text fontSize="xl" color="white">Sales Throughout Time</Text>
+          </Box>
+        </GridItem>
+        <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
+          <Box bg="gray.700" p={4} borderRadius="md">
+            <Text fontSize="xl" color="white">Total Salesforce</Text>
+          </Box>
+        </GridItem>
+        <GridItem colSpan={{ base: 12, md: 6, lg: 3 }}>
+          <Box bg="gray.700" p={4} borderRadius="md">
+            <Text fontSize="xl" color="white">Active Salesforce</Text>
+          </Box>
+        </GridItem>
+        <GridItem colSpan={{ base: 12 }}>
+          <Box bg="gray.700" p={4} borderRadius="md">
+            <Text fontSize="xl" color="white">Agent Tree</Text>
+          </Box>
+        </GridItem>
+      </Grid>
     </Container>
   );
 };
